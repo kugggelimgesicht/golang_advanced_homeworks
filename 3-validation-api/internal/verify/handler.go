@@ -49,6 +49,8 @@ func (handler *VerifHandler) Send() http.HandlerFunc {
 			res.Json(w, err, http.StatusBadRequest)
 			return
 		}
+
+		res.Json(w, "verification email sent", http.StatusOK)
 		record := &VerificationRecord{
 			Email: body.Email,
 			Hash:  hash,
@@ -58,8 +60,6 @@ func (handler *VerifHandler) Send() http.HandlerFunc {
 			res.Json(w, err, http.StatusInternalServerError)
 			return
 		}
-
-		res.Json(w, "verification email sent", http.StatusOK)
 	}
 }
 
@@ -97,6 +97,6 @@ func (handler *VerifHandler) verifyLogic(r *http.Request) (bool, error) {
 		_ = deleteVerification()
 		return false, errors.New("invalid verification link")
 	}
-
+	_ = deleteVerification()
 	return true, nil
 }

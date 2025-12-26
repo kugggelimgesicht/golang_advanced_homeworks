@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab343e1-1eaf-4bf1-ad7d-f9bbace5cb21" name="Changes" comment="HW-3: email confirmation">
+    <list default="true" id="eab343e1-1eaf-4bf1-ad7d-f9bbace5cb21" name="Changes" comment="HW-3: return boolean value from verify method">
+      <change afterPath="$PROJECT_DIR$/3-validation-api/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3-validation-api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-validation-api/internal/verify/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/3-validation-api/internal/verify/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +43,9 @@
     &quot;accountId&quot;: &quot;c42f9995-517d-440f-bc1a-600f1385f8cb&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="com.goide.dfa.ui.problems.view" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -105,7 +111,8 @@
     <MESSAGE value="HW-1: concurrency" />
     <MESSAGE value="HW-2: random api" />
     <MESSAGE value="HW-3: email confirmation" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW-3: email confirmation" />
+    <MESSAGE value="HW-3: return boolean value from verify method" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-3: return boolean value from verify method" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
