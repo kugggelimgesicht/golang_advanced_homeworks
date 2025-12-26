@@ -1,7 +1,6 @@
 package verify
 
 import (
-	"errors"
 	"fmt"
 	"net/http"
 	"net/smtp"
@@ -49,8 +48,6 @@ func (handler *VerifHandler) Send() http.HandlerFunc {
 			res.Json(w, err, http.StatusBadRequest)
 			return
 		}
-
-		res.Json(w, "verification email sent", http.StatusOK)
 		record := &VerificationRecord{
 			Email: body.Email,
 			Hash:  hash,
@@ -60,43 +57,30 @@ func (handler *VerifHandler) Send() http.HandlerFunc {
 			res.Json(w, err, http.StatusInternalServerError)
 			return
 		}
+		res.Json(w, "verification email sent", http.StatusOK)
 	}
 }
 
 func (handler *VerifHandler) Verify() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ok, err := handler.verifyLogic(r)
+		hash := r.PathValue("hash")
+		if hash == "" {
+			res.Json(w, "hash is required", http.StatusBadRequest)
+			return
+		}
+
+		record, err := LoadVerification()
 		if err != nil {
-			res.Json(w, err.Error(), http.StatusBadRequest)
+			res.Json(w, err, http.StatusInternalServerError)
 			return
 		}
-
-		if !ok {
-			res.Json(w, "verification failed", http.StatusNotFound)
+		if record.Hash != hash {
+			_ = deleteVerification()
+			res.Json(w, false, http.StatusNotFound)
 			return
 		}
-
-		res.Json(w, "verification email sent", http.StatusOK)
-	}
-}
-
-func (handler *VerifHandler) verifyLogic(r *http.Request) (bool, error) {
-	hash := r.PathValue("hash")
-	if hash == "" {
-		return false, errors.New("hash is required")
-	}
-
-	record, err := LoadVerification()
-	if err != nil {
-		return false, err
-	}
-	if record == nil {
-		return false, nil
-	}
-	if record.Hash != hash {
 		_ = deleteVerification()
-		return false, errors.New("invalid verification link")
+		res.Json(w, true, http.StatusOK)
 	}
-	_ = deleteVerification()
-	return true, nil
+
 }

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab343e1-1eaf-4bf1-ad7d-f9bbace5cb21" name="Changes" comment="HW-3: return boolean value from verify method">
-      <change afterPath="$PROJECT_DIR$/3-validation-api/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-validation-api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="eab343e1-1eaf-4bf1-ad7d-f9bbace5cb21" name="Changes" comment="HW-3: delete json after successful verification">
+      <change beforePath="$PROJECT_DIR$/3-validation-api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/3-validation-api/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-validation-api/internal/verify/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/3-validation-api/internal/verify/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,8 @@
     <MESSAGE value="HW-2: random api" />
     <MESSAGE value="HW-3: email confirmation" />
     <MESSAGE value="HW-3: return boolean value from verify method" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW-3: return boolean value from verify method" />
+    <MESSAGE value="HW-3: delete json after successful verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-3: delete json after successful verification" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
