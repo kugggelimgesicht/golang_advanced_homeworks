@@ -8,9 +8,14 @@ import (
 )
 
 type Config struct {
+	Db       DbConfig
 	Email    EmailConfig
 	Password PasswordConfig
 	Address  AddressConfig
+}
+
+type DbConfig struct {
+	Db string
 }
 type EmailConfig struct {
 	Email string
@@ -28,6 +33,9 @@ func LoadConfig() *Config {
 		log.Println("Error loading .env file, using defaults.")
 	}
 	return &Config{
+		Db: DbConfig{
+			Db: os.Getenv("DSN"),
+		},
 		Email: EmailConfig{
 			Email: os.Getenv("EMAIL"),
 		},

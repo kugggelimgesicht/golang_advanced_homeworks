@@ -28,7 +28,7 @@ func NewVerifHandler(router *http.ServeMux, deps VerifHandlerDeps) {
 
 func (handler *VerifHandler) Send() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		body, err := req.HandleBody[SendEmailRequest](w, r)
+		body, err := req.HandleBody[SendEmailRequest](&w, r)
 		if err != nil {
 			return
 		}
