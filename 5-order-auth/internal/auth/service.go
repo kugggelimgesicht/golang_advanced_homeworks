@@ -19,7 +19,7 @@ func (service *AuthService) SendOTP(phone string) (string, error) {
 		user, err := service.UserRepository.Update(&user.User{
 			Phone:     phone,
 			SessionId: utils.GenerateSessionID(),
-			OTP:       utils.GenerateSMSCode(),
+			Code:      utils.GenerateSMSCode(),
 		})
 		if err != nil {
 			return "", err
@@ -29,7 +29,7 @@ func (service *AuthService) SendOTP(phone string) (string, error) {
 	user := &user.User{
 		Phone:     phone,
 		SessionId: utils.GenerateSessionID(),
-		OTP:       utils.GenerateSMSCode(),
+		Code:      utils.GenerateSMSCode(),
 	}
 	_, err := service.UserRepository.Create(user)
 	if err != nil {

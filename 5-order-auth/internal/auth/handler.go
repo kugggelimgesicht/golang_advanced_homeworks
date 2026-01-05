@@ -1,11 +1,9 @@
 package auth
 
 import (
-	"fmt"
 	"net/http"
 	"validation-api/configs"
 	"validation-api/pkg/jwt"
-	"validation-api/pkg/middleware"
 	"validation-api/pkg/req"
 	"validation-api/pkg/res"
 )
@@ -31,12 +29,15 @@ func NewAuthHandler(router *http.ServeMux, deps AuthHandlerDeps) {
 func (handler *AuthHandler) VerifyCode() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		body, err := req.HandleBody[VerificationRequest](&w, r)
-		fmt.Println("body", body.OTP, body.SessionId)
 		if err != nil {
 			return
 		}
-		user, _ := handler.UserRepository.FindBySessionId(body.SessionId)
-		if user.OTP == body.OTP {
+		user, err := handler.UserRepository.FindBySessionId(body.SessionId)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusNotFound)
+			return
+		}
+		if user.Code == body.Code {
 			token, err := jwt.NewJWT(handler.Config.Auth.Secret).Create(jwt.JWTData{Phone: user.Phone})
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -53,11 +54,11 @@ func (handler *AuthHandler) VerifyCode() http.HandlerFunc {
 
 func (handler *AuthHandler) SendOTP() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		phone, ok := r.Context().Value(middleware.ContextPhoneKey).(string)
-		if !ok {
+		body, err := req.HandleBody[SendOTPRequest](&w, r)
+		if err != nil {
 			return
 		}
-		sessionId, err := handler.AuthService.SendOTP(phone)
+		sessionId, err := handler.AuthService.SendOTP(body.Phone)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusUnauthorized)
 			return

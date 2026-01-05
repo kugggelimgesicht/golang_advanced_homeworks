@@ -7,5 +7,5 @@ type User struct {
 	Phone     string `gorm:"type:varchar(20);unique;not null"`
 	Name      string
 	SessionId string
-	OTP       string
+	Code      int
 }

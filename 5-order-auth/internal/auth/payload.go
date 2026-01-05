@@ -7,10 +7,10 @@ type RegisterResponse struct {
 	Token string `json:"token"`
 }
 type VerificationRequest struct {
-	SessionId string
-	OTP       string
+	SessionId string `json:"sessionId"`
+	Code      int    `json:"code"`
 }
-type AuthRequest struct {
+type SendOTPRequest struct {
 	Phone string
 }
 type LoginRequest struct {

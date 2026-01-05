@@ -1,17 +1,15 @@
 package utils
 
 import (
-	"crypto/rand"
-	"fmt"
-	"math/big"
+	"math/rand"
+	"time"
 
 	"github.com/google/uuid"
 )
 
-func GenerateSMSCode() string {
-	maxInt := big.NewInt(1000000)
-	n, _ := rand.Int(rand.Reader, maxInt)
-	return fmt.Sprintf("%x", n.Int64())
+func GenerateSMSCode() int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(9000) + 1000
 }
 
 func GenerateSessionID() string {
