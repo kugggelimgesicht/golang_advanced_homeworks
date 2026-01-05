@@ -3,6 +3,8 @@ package product
 import (
 	"net/http"
 	"strconv"
+	"validation-api/configs"
+	"validation-api/pkg/middleware"
 	"validation-api/pkg/req"
 	"validation-api/pkg/res"
 
@@ -11,10 +13,12 @@ import (
 
 type ProductHandler struct {
 	ProductRepository *ProductRepository
+	Config            *configs.Config
 }
 
 type ProductHandlerDeps struct {
 	ProductRepository *ProductRepository
+	Config            *configs.Config
 }
 
 func NewProductHandler(router *http.ServeMux, deps ProductHandlerDeps) {
@@ -22,8 +26,8 @@ func NewProductHandler(router *http.ServeMux, deps ProductHandlerDeps) {
 		ProductRepository: deps.ProductRepository,
 	}
 	router.HandleFunc("POST /product", handler.Create())
-	router.HandleFunc("PATCH /product/{id}", handler.Update())
-	router.HandleFunc("DELETE /product/{id}", handler.Delete())
+	router.Handle("PATCH /product/{id}", middleware.IsAuthorized(handler.Update(), deps.Config))
+	router.Handle("DELETE /product/{id}", middleware.IsAuthorized(handler.Delete(), deps.Config))
 	router.HandleFunc("GET /product/{id}", handler.Get())
 	router.HandleFunc("GET /product", handler.GetAll())
 }

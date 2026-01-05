@@ -4,48 +4,56 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab343e1-1eaf-4bf1-ad7d-f9bbace5cb21" name="Changes" comment="HW-3: delete json after successful verification">
-      <change afterPath="$PROJECT_DIR$/4-order-api/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/cmd/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/configs/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/product/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/product/model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/product/payload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/product/repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/verify/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/verify/payload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/verify/record.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/internal/verify/verificationDataHandler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/migrations/auto.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/db/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/middleware/common.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/middleware/log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/req/decode.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/req/generateHash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/req/handle.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/req/validtate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-order-api/pkg/res/res.go" afterDir="false" />
+    <list default="true" id="eab343e1-1eaf-4bf1-ad7d-f9bbace5cb21" name="Changes" comment="HW-5: add authorization and phone context">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/shop.9to1AA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/shop.9to1AA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/shop.9to1AA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b1e75bfc-6dc1-4da6-8033-7898cf2502cd/storage_v2/_src_/database/shop.9to1AA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/auth/handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/auth/payload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/auth/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/user/handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/user/model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/user/repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/internal/utils/generators.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/pkg/jwt/jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-order-auth/pkg/middleware/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3-validation-api/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/3-validation-api/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/cmd/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/configs/config.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/internal/verify/handler.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/internal/verify/payload.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/internal/verify/record.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/internal/verify/verificationDataHandler.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/pkg/req/decode.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/pkg/req/generateHash.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/pkg/req/handle.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/pkg/req/validtate.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-validation-api/pkg/res/res.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/configs/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/configs/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/product/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/product/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/product/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/product/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/product/payload.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/product/payload.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/product/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/product/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/verify/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/verify/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/verify/payload.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/verify/payload.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/verify/record.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/verify/record.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/internal/verify/verificationDataHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/internal/verify/verificationDataHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/migrations/auto.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/migrations/auto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/middleware/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/middleware/common.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/middleware/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/middleware/log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/req/decode.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/req/decode.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/req/generateHash.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/req/generateHash.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/req/handle.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/req/handle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/req/validtate.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/req/validtate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-order-api/pkg/res/res.go" beforeDir="false" afterPath="$PROJECT_DIR$/5-order-auth/pkg/res/res.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +71,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="3-validation-api" />
+        <entry key="$PROJECT_DIR$" value="4-order-api-start" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,6 +86,16 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/kugggelimgesicht/golang_advanced_homeworks.git&quot;,
     &quot;accountId&quot;: &quot;c42f9995-517d-440f-bc1a-600f1385f8cb&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;kugggelimgesicht&quot;,
+    &quot;repository&quot;: &quot;golang_advanced_homeworks&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -85,7 +103,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="com.goide.dfa.ui.problems.view" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -95,38 +113,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.GoLinterPluginOnboarding": "true",
-    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "4-order-api-start",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/courses/GoHW/4-order-api/pkg/middleware",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;5-order-api-auth&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/courses/GoHW/5-order-auth/internal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\courses\GoHW\5-order-auth\internal" />
+      <recent name="D:\courses\GoHW\5-order-auth\pkg" />
+      <recent name="D:\courses\GoHW\5-order-auth\internal\auth" />
       <recent name="D:\courses\GoHW\4-order-api\pkg\middleware" />
       <recent name="D:\courses\GoHW\3-validation-api\pkg" />
-      <recent name="D:\courses\GoHW\3-validation-api\internal\verify" />
-      <recent name="D:\courses\GoHW\3-validation-api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\courses\GoHW\3-validation-api\internal" />
@@ -171,7 +190,9 @@
     <MESSAGE value="HW-3: email confirmation" />
     <MESSAGE value="HW-3: return boolean value from verify method" />
     <MESSAGE value="HW-3: delete json after successful verification" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW-3: delete json after successful verification" />
+    <MESSAGE value="HW-4: add product handler and repository, connect db, add logging middleware" />
+    <MESSAGE value="HW-5: add authorization and phone context" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-5: add authorization and phone context" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

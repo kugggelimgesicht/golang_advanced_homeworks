@@ -12,6 +12,7 @@ type Config struct {
 	Email    EmailConfig
 	Password PasswordConfig
 	Address  AddressConfig
+	Auth     AuthConfig
 }
 
 type DbConfig struct {
@@ -25,6 +26,9 @@ type PasswordConfig struct {
 }
 type AddressConfig struct {
 	Address string
+}
+type AuthConfig struct {
+	Secret string
 }
 
 func LoadConfig() *Config {
@@ -44,6 +48,9 @@ func LoadConfig() *Config {
 		},
 		Address: AddressConfig{
 			Address: os.Getenv("ADDRESS"),
+		},
+		Auth: AuthConfig{
+			Secret: os.Getenv("SECRET"),
 		},
 	}
 }
