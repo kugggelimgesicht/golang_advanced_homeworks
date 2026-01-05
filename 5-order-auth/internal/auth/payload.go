@@ -11,7 +11,7 @@ type VerificationRequest struct {
 	Code      int    `json:"code"`
 }
 type SendOTPRequest struct {
-	Phone string
+	Phone string `json:"phone" validate:"required"`
 }
 type LoginRequest struct {
 	Email    string `json:"email" validate:"required,email"`

@@ -37,17 +37,18 @@ func (handler *AuthHandler) VerifyCode() http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusNotFound)
 			return
 		}
-		if user.Code == body.Code {
-			token, err := jwt.NewJWT(handler.Config.Auth.Secret).Create(jwt.JWTData{Phone: user.Phone})
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			data := LoginResponse{
-				Token: token,
-			}
-			res.Json(w, data, http.StatusOK)
+		if user.Code != body.Code {
+			http.Error(w, err.Error(), http.StatusUnauthorized)
 		}
+		token, err := jwt.NewJWT(handler.Config.Auth.Secret).Create(jwt.JWTData{Phone: user.Phone})
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		data := LoginResponse{
+			Token: token,
+		}
+		res.Json(w, data, http.StatusOK)
 
 	}
 }

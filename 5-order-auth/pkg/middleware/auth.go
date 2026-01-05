@@ -25,7 +25,10 @@ func IsAuthorized(next http.Handler, config *configs.Config) http.Handler {
 			return
 		}
 		token := strings.TrimPrefix(authHeader, "Bearer ")
-		_, data := jwt.NewJWT(config.Auth.Secret).Parse(token)
+		isValid, data := jwt.NewJWT(config.Auth.Secret).Parse(token)
+		if !isValid {
+			writeUnauthed(w)
+		}
 		ctx := context.WithValue(r.Context(), ContextPhoneKey, data.Phone)
 		req := r.WithContext(ctx)
 		next.ServeHTTP(w, req)
