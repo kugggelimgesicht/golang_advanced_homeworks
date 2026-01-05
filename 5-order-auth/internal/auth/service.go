@@ -3,6 +3,8 @@ package auth
 import (
 	"validation-api/internal/user"
 	"validation-api/internal/utils"
+
+	"gorm.io/gorm"
 )
 
 type AuthService struct {
@@ -17,6 +19,7 @@ func (service *AuthService) SendOTP(phone string) (string, error) {
 	existingUser, _ := service.UserRepository.FindByPhone(phone)
 	if existingUser != nil {
 		user, err := service.UserRepository.Update(&user.User{
+			Model:     gorm.Model{ID: existingUser.ID},
 			Phone:     phone,
 			SessionId: utils.GenerateSessionID(),
 			Code:      utils.GenerateSMSCode(),

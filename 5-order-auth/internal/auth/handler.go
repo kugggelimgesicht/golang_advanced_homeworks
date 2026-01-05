@@ -38,7 +38,8 @@ func (handler *AuthHandler) VerifyCode() http.HandlerFunc {
 			return
 		}
 		if user.Code != body.Code {
-			http.Error(w, err.Error(), http.StatusUnauthorized)
+			http.Error(w, ErrWrongCode, http.StatusUnauthorized)
+			return
 		}
 		token, err := jwt.NewJWT(handler.Config.Auth.Secret).Create(jwt.JWTData{Phone: user.Phone})
 		if err != nil {
